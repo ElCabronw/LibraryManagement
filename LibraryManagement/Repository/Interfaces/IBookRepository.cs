@@ -10,6 +10,7 @@ namespace LibraryManagement.Repository.Interfaces
 		Task<BookInclusaoDTO> Create(BookInclusaoDTO vo);
 		Task<BookDTO> Update(BookDTO vo);
 		Task<bool> Delete(long id);
-	}
+        void InserirLog(string action, string request, string response, string path, int? statusCode);
+    }
 }
 

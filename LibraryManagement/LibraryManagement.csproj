@@ -17,6 +17,8 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.0" />
+    <PackageReference Include="Elmah.Io.AspNetCore" Version="4.1.37" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +36,9 @@
     <None Remove="Data\" />
     <None Remove="Data\DTOs\" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Middlewares\" />
+    <None Remove="Microsoft.IO.RecyclableMemoryStream" />
+    <None Remove="Elmah.Io.AspNetCore" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -44,5 +49,6 @@
     <Folder Include="Repository\Interfaces\" />
     <Folder Include="Data\" />
     <Folder Include="Data\DTOs\" />
+    <Folder Include="Middlewares\" />
   </ItemGroup>
 </Project>

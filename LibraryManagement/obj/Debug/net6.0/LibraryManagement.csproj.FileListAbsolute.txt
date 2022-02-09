@@ -36,3 +36,7 @@
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Humanizer.dll
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Design.dll
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Microsoft.IO.RecyclableMemoryStream.dll
+/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Elmah.Io.AspNetCore.dll
+/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Elmah.Io.Client.dll
+/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/bin/Debug/net6.0/Newtonsoft.Json.dll

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Text;
 using AutoMapper;
+using Dapper;
 using LibraryManagement.Data.DTOs;
 using LibraryManagement.Models;
 using LibraryManagement.Models.Context;
@@ -12,11 +14,24 @@ namespace LibraryManagement.Repository
 	{
 		private readonly MyPostgreSQLContext _context;
 		private IMapper _mapper;
-		public BookRepository(MyPostgreSQLContext context, IMapper mapper)
-		{
+		public BookRepository(MyPostgreSQLContext context, IMapper mapper) 
+        {
 			_context = context;
 			_mapper = mapper;
 		}
+        public void InserirLog(string action, string request, string response, string path, int? statusCode)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.AppendLine("		INSERT INTO public.logger(											  ");
+            sql.AppendLine("action,hora_inclusao, request_value,response_value, path, status_code)  ");
+            sql.Append($"  VALUES('{action}', GETDATE(), '{request}', '{response}', '{path}','{statusCode.ToString()}')");
+            try
+            {
+                _context.Database.GetDbConnection().ExecuteScalar(sql.ToString(), null);
+            }
+            catch { }
+        }
+
         public async Task<IEnumerable<BookDTO>> FindAll(bool sortByName = false) // Se True, ordenar pelo nome dos livros
         {
             try
