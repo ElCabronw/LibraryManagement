@@ -40,12 +40,14 @@ namespace LibraryManagement.Controllers
         }
         /// <summary>
         /// Obtém todos os livros cadastrados no sistema
+        /// sortByName == true -> ordena pelos nomes dos livros.
+        /// sortByName == false -> ordena pelo Id.
         /// </summary>
         /// <remarks>
         /// Sample request:
-        /// GET /book/1            
+        /// GET /book/true            
         /// </remarks>
-        /// <param name="id"></param>
+        /// <param name="sortByName">bool</param>
         /// <returns>Retorna todos os livros.</returns>
         /// <response code="200">Retorna todos os livros</response>
         /// <response code="400">Sem livros cadastrados na base.</response>
@@ -80,7 +82,25 @@ namespace LibraryManagement.Controllers
             var book = await _repository.Create(vo);
             return Ok(book);
         }
-
+        /// <summary>
+        ///Atualiza um livro
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     PUT /Book
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Livro #1",
+        ///        "authorId": 1,
+        ///        "genreId": 1
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="vo"></param>
+        /// <returns>Retorna o objeto do livro atualizado</returns>
+        /// <response code="200">Retorna o livro atualizado</response>
+        /// <response code="400">Erro ao atualizar o livro.</response>
         [HttpPut]
         public async Task<ActionResult<BookDTO>> Update([FromBody] BookDTO vo)
         {
@@ -89,7 +109,17 @@ namespace LibraryManagement.Controllers
             return Ok(book);
 
         }
-
+        /// <summary>
+        /// Apaga um livro pelo Id
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// DELETE /book/1            
+        /// </remarks>
+        /// <param name="id">bool</param>
+        /// <returns>Apaga um livro pelo Id.</returns>
+        /// <response code="200">true</response>
+        /// <response code="400"></response>
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(long id)
         {

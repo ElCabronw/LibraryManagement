@@ -38,7 +38,7 @@ namespace LibraryManagement.Repository
             {
                 var books = sortByName ?
                     await _context.Books.Include(x => x.Author).Include(x => x.Genre).OrderBy(x => x.Name).ToListAsync() :
-                    await _context.Books.Include(x => x.Author).Include(x => x.Genre).ToListAsync();
+                    await _context.Books.Include(x => x.Author).Include(x => x.Genre).OrderBy(x => x.Id).ToListAsync();
                 return _mapper.Map<List<BookDTO>>(books);
             }
             catch (Exception ex)

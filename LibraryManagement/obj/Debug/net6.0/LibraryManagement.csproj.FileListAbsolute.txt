@@ -41,3 +41,4 @@
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/obj/Debug/net6.0/LibraryManagement.xml
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/obj/Debug/net6.0/LibraryManagement.pdb
 /Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/obj/Debug/net6.0/LibraryManagement.genruntimeconfig.cache
+/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/obj/Debug/net6.0/LibraryManagement.csproj.AssemblyReference.cache

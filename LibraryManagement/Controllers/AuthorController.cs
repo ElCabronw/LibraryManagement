@@ -26,6 +26,17 @@ namespace LibraryManagement.Controllers
             var products = await _repository.FindAll();
             return Ok(products);
         }
+        /// <summary>
+        /// Obtém um autor pelo Id
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// GET /Author/1            
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Retorna o autor pelo Id informado.</returns>
+        /// <response code="200">Retorna o autor pelo Id</response>
+        /// <response code="400">Autor nao encontrado.</response>
         [HttpGet("{id}")]
         public async Task<ActionResult<AuthorDTO>> FindById(long id)
         {
