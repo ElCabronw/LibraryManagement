@@ -8,6 +8,41 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Npgsql.EntityFrameworkCore.PostgreSQL" />
+    <None Remove="Models\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Dapper" />
+    <None Remove="AutoMapper" />
+    <None Remove="Models\Context\" />
+    <None Remove="Models\Base\" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Config\" />
+    <None Remove="Repository\" />
+    <None Remove="Repository\Interfaces\" />
+    <None Remove="Data\" />
+    <None Remove="Data\DTOs\" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Models\Context\" />
+    <Folder Include="Models\Base\" />
+    <Folder Include="Config\" />
+    <Folder Include="Repository\" />
+    <Folder Include="Repository\Interfaces\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\DTOs\" />
+  </ItemGroup>
 </Project>
