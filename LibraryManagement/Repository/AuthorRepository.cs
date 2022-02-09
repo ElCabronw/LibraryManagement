@@ -15,7 +15,6 @@ namespace LibraryManagement.Repository
 		public AuthorRepository(MyPostgreSQLContext context, IMapper mapper)
         {
 			_context = context;
-			_mapper = mapper;
 		}
 
         public async Task<IEnumerable<AuthorDTO>> FindAll()

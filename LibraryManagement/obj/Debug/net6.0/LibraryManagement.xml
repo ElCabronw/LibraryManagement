@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibraryManagement</name>
+    </assembly>
+    <members>
+        <member name="M:LibraryManagement.Controllers.BookController.FindById(System.Int64)">
+            <summary>
+            Obtém um livro pelo Id
+            </summary>
+            <remarks>
+            Sample request:
+            GET /book/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna o livro pelo Id informado.</returns>
+            <response code="200">Retorna o livro pelo Id</response>
+            <response code="400">Livro nao encontrado.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.FindAll(System.Boolean)">
+            <summary>
+            Obtém todos os livros cadastrados no sistema
+            </summary>
+            <remarks>
+            Sample request:
+            GET /book/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna todos os livros.</returns>
+            <response code="200">Retorna todos os livros</response>
+            <response code="400">Sem livros cadastrados na base.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.BookController.Create(LibraryManagement.Data.DTOs.BookInclusaoDTO)">
+             <summary>
+            Cria um livro
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Book
+                 {
+                    "name": "Livro #1",
+                    "authorId": 1,
+                    "genreId": 1
+                 }
+            
+             </remarks>
+             <param name="vo"></param>
+             <returns>Retorna o objeto do livro criado</returns>
+             <response code="200">Retorna o livro criado</response>
+             <response code="400">Erro ao criar o livro.</response>
+        </member>
+    </members>
+</doc>

@@ -41,20 +41,7 @@ namespace LibraryManagement.Middlewares
                 if (context.Request?.Method == "PUT" || context.Request?.Method == "POST" || context.Request?.Method == "DELETE")
                 {
                     if (string.IsNullOrEmpty(bodyRequest)) bodyRequest = context.Request?.QueryString.ToString();
-                    /*
-                    StringBuilder sql = new StringBuilder();
-                    sql.AppendLine("		INSERT INTO public.logger(											  ");
-                    sql.AppendLine("action,hora_inclusao, request_value,response_value, path, status_code)  ");
-                    sql.Append($"  VALUES('{context.Request?.Method}', GETDATE(), '{bodyRequest}', '{bodyResponse}', '{context.Request?.Path.Value}','{context.Response?.StatusCode.ToString()}')");
-                    try
-                    {
-                        _context.Database.GetDbConnection().ExecuteScalar(sql.ToString(), null);
-                    }
-                    catch(Exception ex)
-                    {
-                        throw ex;
-                    }
-                    */
+                  
                     loggerRepository.InserirLog(context.Request?.Method, bodyRequest, bodyResponse, context.Request?.Path.Value, context.Response?.StatusCode);
                 }
             }
