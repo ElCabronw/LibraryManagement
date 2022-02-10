@@ -12,10 +12,13 @@ Para o funcionamento da WEB Api siga os passos:
 0 - Baixe o ZIP do projeto. https://github.com/ElCabronw/LibraryManagement/archive/refs/heads/master.zip
 
 
-1 - Abra o arquivo appsettings.json e em seguida altere a string de conexão em "DefaultConnection" para se conectar com o banco PostgreSQL.
+1- Verifique se o pacote do entity framework foi instalado com sucesso na sua máquina, caso contrario utilize o comando no terminal "dotnet tool install --global dotnet-ef"
 
 
-2 - Execute o comando "dotnet ef database update" para aplicar as migrations e assim o Entity construa as tabelas no banco de dados e aplique os dados que deixei por default pra facilitar na hora de você testar ;).
+2 - Abra o arquivo appsettings.json e em seguida altere a string de conexão em "DefaultConnection" para se conectar com o banco PostgreSQL.
+
+
+2 - Execute o comando "dotnet ef database update" se for utilizar o terminal ou "update-database" se estiver utilizando nuget package manager, para aplicar as migrations e assim o Entity construa as tabelas no banco de dados e aplique os dados que deixei por default pra facilitar na hora de você testar ;).
 
 
 3 - Execute a aplicação, irá abrir no seu navegador a página do Swagger e você ja estará apto a realizar as chamadas aos endpoints.
