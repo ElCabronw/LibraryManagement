@@ -7,10 +7,9 @@ namespace LibraryManagement.Repository.Interfaces
 	{
 		Task<IEnumerable<BookDTO>> FindAll(bool sortByName = false);
 		Task<BookDTO> FindById(long id);
-		Task<BookInclusaoDTO> Create(BookInclusaoDTO vo);
+		Task<BookDTO> Create(BookInclusaoDTO vo);
 		Task<BookDTO> Update(BookDTO vo);
 		Task<bool> Delete(long id);
-        void InserirLog(string action, string request, string response, string path, int? statusCode);
     }
 }
 

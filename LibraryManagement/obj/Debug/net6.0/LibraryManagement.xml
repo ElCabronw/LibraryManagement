@@ -4,6 +4,84 @@
         <name>LibraryManagement</name>
     </assembly>
     <members>
+        <member name="M:LibraryManagement.Controllers.AuthorController.FindAll">
+            <summary>
+            Obtém uma lista de autores
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Author            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna a lista de autores.</returns>
+            <response code="200">Retorna a lista de autores</response>
+            <response code="400">Erro na consulta.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthorController.FindById(System.Int64)">
+            <summary>
+            Obtém um autor pelo Id
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Author/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna o autor pelo Id informado.</returns>
+            <response code="200">Retorna o autor pelo Id</response>
+            <response code="400">Autor nao encontrado.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthorController.Create(LibraryManagement.Data.DTOs.AuthorDTO)">
+             <summary>
+            Cria um autor
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Author
+                 {
+                    "firstName": "Fulano",
+                    "lastName": " da Silva ",
+                 }
+            
+             </remarks>
+             <param name="vo"></param>
+             <returns>Retorna o objeto do autor criado</returns>
+             <response code="200">Retorna o autor criado</response>
+             <response code="400">Erro ao criar o autor.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthorController.Update(LibraryManagement.Data.DTOs.AuthorDTO)">
+             <summary>
+            Atualiza um autor
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Author
+                 {
+                    "id": 1
+                    "firstName": "Fulano",
+                    "lastName": " da Silva ",
+                 }
+            
+             </remarks>
+             <param name="vo"></param>
+             <returns>Retorna o objeto do autor atualizado</returns>
+             <response code="200">Retorna o autor atualizado</response>
+             <response code="400">Erro ao atualizar o autor.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.AuthorController.Delete(System.Int64)">
+            <summary>
+            Apaga um autor pelo Id
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Author/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna true se apagar com sucesso.</returns>
+            <response code="200">Retorna true</response>
+            <response code="400">Retorna false</response>
+        </member>
         <member name="M:LibraryManagement.Controllers.BookController.FindById(System.Int64)">
             <summary>
             Obtém um livro pelo Id
@@ -85,6 +163,82 @@
             <returns>Apaga um livro pelo Id.</returns>
             <response code="200">true</response>
             <response code="400"></response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.GenreController.FindAll">
+            <summary>
+            Obtém uma lista de generos
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Genre            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna a lista de generos.</returns>
+            <response code="200">Retorna a lista de generos</response>
+            <response code="400">Erro na consulta.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.GenreController.FindById(System.Int64)">
+            <summary>
+            Obtém um genero pelo Id
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Genre/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna o genero pelo Id informado.</returns>
+            <response code="200">Retorna o genero pelo Id</response>
+            <response code="400">Genero nao encontrado.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.GenreController.Create(LibraryManagement.Data.DTOs.GenreDTO)">
+             <summary>
+            Cria um genero
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Genre
+                 {
+                    "name": "Mistery",
+                 }
+            
+             </remarks>
+             <param name="vo"></param>
+             <returns>Retorna o objeto do genero criado</returns>
+             <response code="200">Retorna o genero criado</response>
+             <response code="400">Erro ao criar o genero.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.GenreController.Update(LibraryManagement.Data.DTOs.GenreDTO)">
+             <summary>
+            Atualiza um genero
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Genre
+                 {
+                    "id": 1
+                    "name": "Mistery",
+                 }
+            
+             </remarks>
+             <param name="vo"></param>
+             <returns>Retorna o objeto do genero atualizado</returns>
+             <response code="200">Retorna o genero atualizado</response>
+             <response code="400">Erro ao atualizar o genero.</response>
+        </member>
+        <member name="M:LibraryManagement.Controllers.GenreController.Delete(System.Int64)">
+            <summary>
+            Apaga um genero pelo Id
+            </summary>
+            <remarks>
+            Sample request:
+            GET /Genre/1            
+            </remarks>
+            <param name="id"></param>
+            <returns>Retorna true se apagar com sucesso.</returns>
+            <response code="200">Retorna true</response>
+            <response code="400">Retorna false</response>
         </member>
     </members>
 </doc>

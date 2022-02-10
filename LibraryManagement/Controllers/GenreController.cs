@@ -19,7 +19,17 @@ namespace LibraryManagement.Controllers
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
         }
-
+        /// <summary>
+        /// Obtém uma lista de generos
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// GET /Genre            
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Retorna a lista de generos.</returns>
+        /// <response code="200">Retorna a lista de generos</response>
+        /// <response code="400">Erro na consulta.</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<GenreDTO>>> FindAll()
         {
@@ -34,6 +44,17 @@ namespace LibraryManagement.Controllers
             }
            
         }
+        /// <summary>
+        /// Obtém um genero pelo Id
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// GET /Genre/1            
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Retorna o genero pelo Id informado.</returns>
+        /// <response code="200">Retorna o genero pelo Id</response>
+        /// <response code="400">Genero nao encontrado.</response>
         [HttpGet("{id}")]
         public async Task<ActionResult<GenreDTO>> FindById(long id)
         {
@@ -50,6 +71,22 @@ namespace LibraryManagement.Controllers
             }
 
         }
+        /// <summary>
+        ///Cria um genero
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Genre
+        ///     {
+        ///        "name": "Mistery",
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="vo"></param>
+        /// <returns>Retorna o objeto do genero criado</returns>
+        /// <response code="200">Retorna o genero criado</response>
+        /// <response code="400">Erro ao criar o genero.</response>
         [HttpPost]
         public async Task<ActionResult<GenreDTO>> Create([FromBody] GenreDTO vo)
         {
@@ -65,7 +102,23 @@ namespace LibraryManagement.Controllers
             }
 
         }
-
+        /// <summary>
+        ///Atualiza um genero
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Genre
+        ///     {
+        ///        "id": 1
+        ///        "name": "Mistery",
+        ///     }
+        ///
+        /// </remarks>
+        /// <param name="vo"></param>
+        /// <returns>Retorna o objeto do genero atualizado</returns>
+        /// <response code="200">Retorna o genero atualizado</response>
+        /// <response code="400">Erro ao atualizar o genero.</response>
         [HttpPut]
         public async Task<ActionResult<GenreDTO>> Update([FromBody] GenreDTO vo)
         {
@@ -82,6 +135,17 @@ namespace LibraryManagement.Controllers
           
 
         }
+        /// <summary>
+        /// Apaga um genero pelo Id
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// GET /Genre/1            
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <returns>Retorna true se apagar com sucesso.</returns>
+        /// <response code="200">Retorna true</response>
+        /// <response code="400">Retorna false</response>
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(long id)

@@ -33,10 +33,18 @@ namespace LibraryManagement.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<BookDTO>> FindById(long id)
         {
-            var book = await _repository.FindById(id);
-            if (book == null) return NotFound();
+            try
+            {
+                var book = await _repository.FindById(id);
+                if (book == null) return NotFound();
 
-            return Ok(book);
+                return Ok(book);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro inesperado. Mensagem : {ex.Message} \r\n Detalhes : {ex.StackTrace}");
+            }
+        
         }
         /// <summary>
         /// Obtém todos os livros cadastrados no sistema
@@ -54,8 +62,16 @@ namespace LibraryManagement.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BookDTO>>> FindAll(bool sortByName)
         {
-            var books = await _repository.FindAll(sortByName);
-            return Ok(books);
+            try
+            {
+                var books = await _repository.FindAll(sortByName);
+                return Ok(books);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro inesperado. Mensagem : {ex.Message} \r\n Detalhes : {ex.StackTrace}");
+            }
+       
         }
         /// <summary>
         ///Cria um livro
@@ -78,9 +94,16 @@ namespace LibraryManagement.Controllers
         [HttpPost]
         public async Task<ActionResult<BookDTO>> Create([FromBody] BookInclusaoDTO vo)
         {
-            if (vo == null) return BadRequest();
-            var book = await _repository.Create(vo);
-            return Ok(book);
+            try
+            {
+                if (vo == null) return BadRequest();
+                var book = await _repository.Create(vo);
+                return Ok(book);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro inesperado. Mensagem : {ex.Message} \r\n Detalhes : {ex.StackTrace}");
+            }
         }
         /// <summary>
         ///Atualiza um livro
@@ -104,9 +127,17 @@ namespace LibraryManagement.Controllers
         [HttpPut]
         public async Task<ActionResult<BookDTO>> Update([FromBody] BookDTO vo)
         {
-            if (vo == null) return BadRequest();
-            var book = await _repository.Update(vo);
-            return Ok(book);
+            try
+            {
+                if (vo == null) return BadRequest();
+                var book = await _repository.Update(vo);
+                return Ok(book);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro inesperado. Mensagem : {ex.Message} \r\n Detalhes : {ex.StackTrace}");
+            }
+         
 
         }
         /// <summary>
@@ -123,9 +154,17 @@ namespace LibraryManagement.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(long id)
         {
-            var isDeleted = await _repository.Delete(id);
-            if (!isDeleted) return BadRequest();
-            else return Ok(isDeleted);
+            try
+            {
+                var isDeleted = await _repository.Delete(id);
+                if (!isDeleted) return BadRequest();
+                else return Ok(isDeleted);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ocorreu um erro inesperado. Mensagem : {ex.Message} \r\n Detalhes : {ex.StackTrace}");    
+            }
+          
         }
     }
 }

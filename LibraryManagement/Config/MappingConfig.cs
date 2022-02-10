@@ -18,7 +18,6 @@ namespace LibraryManagement.Config
 				opt.MapFrom(src =>
 				src.Author.FirstName + " " + src.Author.LastName))
 				;
-
 				config.CreateMap<BookDTO, Book>();
 				config.CreateMap<BookInclusaoDTO, Book>().ReverseMap();
 				config.CreateMap<Author, AuthorDTO>().ReverseMap();

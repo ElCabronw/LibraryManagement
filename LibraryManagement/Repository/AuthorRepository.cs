@@ -15,13 +15,14 @@ namespace LibraryManagement.Repository
 		public AuthorRepository(MyPostgreSQLContext context, IMapper mapper)
         {
 			_context = context;
+            _mapper = mapper;
 		}
 
         public async Task<IEnumerable<AuthorDTO>> FindAll()
         {
             try
             {
-                var authors = await _context.Authors.ToListAsync();
+                var authors = await _context.Authors.OrderBy(x => x.Id).ToListAsync();
                 return _mapper.Map<List<AuthorDTO>>(authors);
             }
             catch (Exception ex)

@@ -19,18 +19,6 @@ namespace LibraryManagement.Repository
 			_context = context;
 			_mapper = mapper;
 		}
-        public void InserirLog(string action, string request, string response, string path, int? statusCode)
-        {
-            StringBuilder sql = new StringBuilder();
-            sql.AppendLine("		INSERT INTO public.logger(											  ");
-            sql.AppendLine("action,hora_inclusao, request_value,response_value, path, status_code)  ");
-            sql.Append($"  VALUES('{action}', GETDATE(), '{request}', '{response}', '{path}','{statusCode.ToString()}')");
-            try
-            {
-                _context.Database.GetDbConnection().ExecuteScalar(sql.ToString(), null);
-            }
-            catch { }
-        }
 
         public async Task<IEnumerable<BookDTO>> FindAll(bool sortByName = false) // Se True, ordenar pelo nome dos livros
         {
@@ -65,14 +53,14 @@ namespace LibraryManagement.Repository
             }
           
         }
-        public async Task<BookInclusaoDTO> Create(BookInclusaoDTO vo)
+        public async Task<BookDTO> Create(BookInclusaoDTO vo)
         {
             try
             {
                 Book book = _mapper.Map<Book>(vo);
                 await _context.Books.AddAsync(book);
                 await _context.SaveChangesAsync();
-                return _mapper.Map<BookInclusaoDTO>(book);
+                return _mapper.Map<BookDTO>(book);
             }
             catch (Exception ex)
             {
@@ -83,10 +71,18 @@ namespace LibraryManagement.Repository
         }
         public async Task<BookDTO> Update(BookDTO vo)
         {
-            Book book = _mapper.Map<Book>(vo);
-            _context.Books.Update(book);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<BookDTO>(book);
+            try
+            {
+                Book book = _mapper.Map<Book>(vo);
+                _context.Books.Update(book);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<BookDTO>(book);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+         
         }
         public async Task<bool> Delete(long id)
         {
@@ -102,7 +98,7 @@ namespace LibraryManagement.Repository
             }
             catch (Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
 
