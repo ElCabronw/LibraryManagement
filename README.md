@@ -1,6 +1,8 @@
 # LibraryManagement
 WebAPI para gerenciamento de livraria.
 
+Autor : Lucas Fuziyama
+
 Bem vindo !
 
     Configurando:
