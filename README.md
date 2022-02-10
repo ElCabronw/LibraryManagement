@@ -9,6 +9,9 @@ Bem vindo !
 
 Para o funcionamento da WEB Api siga os passos:
 
+0 - Baixe o ZIP do projeto. https://github.com/ElCabronw/LibraryManagement/archive/refs/heads/master.zip
+
+
 1 - Abra o arquivo appsettings.json e em seguida altere a string de conexão em "DefaultConnection" para se conectar com o banco PostgreSQL.
 
 
@@ -22,14 +25,24 @@ Para o funcionamento da WEB Api siga os passos:
     Executando:
 [GET]
 "api/v1/{controller}" -> Lista todos os '{controller}' cadastrados no sistema.
+
+
 [GET]
 "api/v1/{controller}/{id}" ->Obtém um objeto do tipo '{controller}'.
+
+
 [POST]
 "api/v1/{controller}" -> Cria um objeto do tipo '{controller}'.
+
+
 [PUT]
 "api/v1/{controller}" -> Atualiza um objeto do tipo '{controller}'.
+
+
 [DELETE]
 "api/v1/{controller}/{id}" ->Apaga um objeto do tipo '{controller}'.
+
+
 
     Considerações importantes:
 O endpoint [POST] "api/v1/book" é necessário passar um autorId e um generoId válidos para o funcionamento, esses Ids se obtem utilizando as API's [GET] de Author e Genre.
