@@ -1,29 +1,32 @@
 ﻿<Properties StartupConfiguration="{D24C143E-8DD4-4B61-8D12-73ECA872940A}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.LibraryManagement PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="LibraryManagement/Repository/LoggerRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibraryManagement/Program.cs">
     <Files>
-      <File FileName="LibraryManagement/Program.cs" Line="13" Column="31" />
-      <File FileName="LibraryManagement/Repository/LoggerRepository.cs" Line="3" Column="18" />
+      <File FileName="LibraryManagement/Program.cs" Line="51" Column="37" />
+      <File FileName="LibraryManagement/Repository/LoggerRepository.cs" Line="8" Column="1" />
       <File FileName="LibraryManagement/Repository/BookRepository.cs" Line="23" Column="10" />
       <File FileName="LibraryManagement/Models/Context/MyPostgreSQLContext.cs" Line="1" Column="1" />
       <File FileName="LibraryManagement/Repository/GenreRepository.cs" Line="1" Column="1" />
       <File FileName="LibraryManagement/Repository/Interfaces/ILoggerRepository.cs" Line="6" Column="19" />
+      <File FileName="LibraryManagement/Middlewares/LoggingMiddleware.cs" Line="44" Column="19" />
+      <File FileName="LibraryManagement/Controllers/BookController.cs" Line="33" Column="12" />
+      <File FileName="LibraryManagement/Repository/AuthorRepository.cs" Line="40" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LibraryManagement" expanded="True">
-            <Node name="LibraryManagement" expanded="True">
+            <Node name="LibraryManagement" expanded="True" selected="True">
+              <Node name="Controllers" expanded="True" />
               <Node name="Middlewares" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="Context" expanded="True" />
               </Node>
               <Node name="Repository" expanded="True">
                 <Node name="Interfaces" expanded="True" />
-                <Node name="LoggerRepository.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -34,9 +37,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/lucasfuziyama/Projects/LibraryManagement/LibraryManagement/Middlewares/LoggingMiddleware.cs" relfile="LibraryManagement/Middlewares/LoggingMiddleware.cs" line="28" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
 </Properties>
