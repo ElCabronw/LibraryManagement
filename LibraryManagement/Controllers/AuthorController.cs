@@ -95,8 +95,8 @@ namespace LibraryManagement.Controllers
             try
             {
                 if (vo == null) return BadRequest();
-                var product = await _repository.Create(vo);
-                return Ok(product);
+                var author = await _repository.Create(vo);
+                return Ok(author);
             }
             catch (Exception ex)
             {
@@ -128,8 +128,8 @@ namespace LibraryManagement.Controllers
             try
             {
                 if (vo == null) return BadRequest();
-                var product = await _repository.Update(vo);
-                return Ok(product);
+                var author = await _repository.Update(vo);
+                return Ok(author);
             }
             catch (Exception ex)
             {

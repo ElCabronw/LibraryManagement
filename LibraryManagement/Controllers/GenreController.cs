@@ -60,10 +60,10 @@ namespace LibraryManagement.Controllers
         {
             try
             {
-                var author = await _repository.FindById(id);
-                if (author == null) return NotFound();
+                var genre = await _repository.FindById(id);
+                if (genre == null) return NotFound();
 
-                return Ok(author);
+                return Ok(genre);
             }
             catch (Exception ex)
             {
